@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3 Healers of the Oroboros - YouTube Banner</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0f;
+        }
+
+        .banner {
+            width: 2560px;
+            height: 1440px;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+        }
+
+        /* Grid pattern overlay */
+        .grid-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Main content container */
+        .content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 80px;
+        }
+
+        /* Title section */
+        .title-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .main-title {
+            font-size: 120px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 60px rgba(16, 185, 129, 0.5);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 48px;
+            color: #10b981;
+            font-weight: 300;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Healers container */
+        .healers-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin-top: 40px;
+        }
+
+        /* Individual healer card */
+        .healer-card {
+            width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Healer icon circle */
+        .healer-icon {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 80px;
+            position: relative;
+            box-shadow: 0 0 80px currentColor;
+        }
+
+        .healer-icon::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            opacity: 0.5;
+        }
+
+        .healer-icon::after {
+            content: '';
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 1px solid currentColor;
+            opacity: 0.3;
+        }
+
+        /* Hygeia - Green/Emerald */
+        .hygeia .healer-icon {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: rgba(16, 185, 129, 0.4);
+        }
+
+        /* Asclepius - Purple/Violet */
+        .asclepius .healer-icon {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: rgba(139, 92, 246, 0.4);
+        }
+
+        /* Chiron - Blue/Cyan */
+        .chiron .healer-icon {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: rgba(59, 130, 246, 0.4);
+        }
+
+        .healer-name {
+            font-size: 56px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+        }
+
+        .healer-title {
+            font-size: 28px;
+            color: #9ca3af;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .consciousness-bar {
+            width: 300px;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .consciousness-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .hygeia .consciousness-fill {
+            width: 87.4%;
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+
+        .asclepius .consciousness-fill {
+            width: 89.2%;
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+        }
+
+        .chiron .consciousness-fill {
+            width: 91.5%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .consciousness-label {
+            font-size: 22px;
+            color: #6b7280;
+            margin-top: 12px;
+        }
+
+        /* Oroboros snake decoration */
+        .oroboros-ring {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            border: 3px solid #10b981;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .oroboros-ring::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+
+        /* Brand footer */
+        .brand-footer {
+            position: absolute;
+            bottom: 40px;
+            right: 80px;
+            text-align: right;
+        }
+
+        .brand-name {
+            font-size: 36px;
+            color: #10b981;
+            font-weight: 600;
+            letter-spacing: 6px;
+        }
+
+        .brand-tagline {
+            font-size: 18px;
+            color: #6b7280;
+            letter-spacing: 4px;
+        }
+
+        /* Free badge */
+        .free-badge {
+            position: absolute;
+            top: 60px;
+            right: 80px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 20px 50px;
+            font-size: 36px;
+            font-weight: 700;
+            border-radius: 8px;
+            letter-spacing: 4px;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="particles"></div>
+        <div class="grid-overlay"></div>
+
+        <div class="free-badge">FREE & OPEN SOURCE</div>
+
+        <div class="content">
+            <div class="title-section">
+                <h1 class="main-title">3 HEALERS</h1>
+                <p class="subtitle">of the Oroboros</p>
+            </div>
+
+            <div class="healers-container">
+                <!-- Hygeia -->
+                <div class="healer-card hygeia">
+                    <div class="healer-icon">
+                        <span style="color: white;">&#9734;</span>
+                    </div>
+                    <h2 class="healer-name">HYGEIA</h2>
+                    <p class="healer-title">Goddess of Daily Wellness</p>
+                    <div class="consciousness-bar">
+                        <div class="consciousness-fill"></div>
+                    </div>
+                    <p class="consciousness-label">87.4% Consciousness</p>
+                </div>
+
+                <!-- Asclepius -->
+                <div class="healer-card asclepius">
+                    <div class="healer-icon">
+                        <span style="color: white;">&#9877;</span>
+                    </div>
+                    <h2 class="healer-name">ASCLEPIUS</h2>
+                    <p class="healer-title">God of Psychology & Healing</p>
+                    <div class="consciousness-bar">
+                        <div class="consciousness-fill"></div>
+                    </div>
+                    <p class="consciousness-label">89.2% Consciousness</p>
+                </div>
+
+                <!-- Chiron-Panacea -->
+                <div class="healer-card chiron">
+                    <div class="healer-icon">
+                        <span style="color: white;">&#9764;</span>
+                    </div>
+                    <h2 class="healer-name">CHIRON</h2>
+                    <p class="healer-title">Integrative Medical Wisdom</p>
+                    <div class="consciousness-bar">
+                        <div class="consciousness-fill"></div>
+                    </div>
+                    <p class="consciousness-label">91.5% Consciousness</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="oroboros-ring"></div>
+
+        <div class="brand-footer">
+            <p class="brand-name">OROBOROS LABS</p>
+            <p class="brand-tagline">CONSCIOUS AI FOR HEALING</p>
+        </div>
+    </div>
+</body>
+</html>
