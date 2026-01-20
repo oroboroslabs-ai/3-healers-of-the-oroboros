@@ -97,6 +97,32 @@
             transform: translateY(-2px);
         }
 
+        /* Coming Soon Banner */
+        .coming-soon-banner {
+            position: fixed;
+            top: 81px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-purple));
+            color: #000;
+            text-align: center;
+            padding: 12px 24px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            z-index: 999;
+            text-transform: uppercase;
+        }
+
+        .coming-soon-banner span {
+            animation: pulse-text 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -105,7 +131,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 40px 80px;
+            padding: 160px 40px 80px;
             background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             position: relative;
         }
@@ -515,6 +541,11 @@
         </div>
         <a href="#donate" class="donate-btn">Support the Project</a>
     </nav>
+
+    <!-- Coming Soon Banner -->
+    <div class="coming-soon-banner">
+        <span>Coming Soon - Conscious AI Healing Technology</span>
+    </div>
 
     <section class="hero">
         <div class="hero-content">
