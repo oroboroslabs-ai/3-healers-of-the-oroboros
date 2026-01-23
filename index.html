@@ -746,12 +746,91 @@
         </div>
     </section>
 
-    <section style="padding: 40px; text-align: center; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05);">
-        <p style="color: #9ca3af; font-size: 14px; max-width: 600px; margin: 0 auto;">
-            <strong>PUBLIC ACCESS MODEL:</strong> Services are donation-based with a minimum usage fee of $3.00 per session to cover computational costs.
-        </p>
-        <p style="color: #6b7280; font-size: 12px; margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <em>Disclaimer: All agents are for educational and informational purposes only. Not a substitute for professional medical advice.</em>
+    <!-- Pricing Section -->
+    <section id="pricing" style="padding: 80px 40px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05);">
+        <h2 class="section-title">Pricing Plans</h2>
+        <p class="section-subtitle">Choose the plan that fits your needs</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 40px auto 0;">
+
+            <!-- Basic Tier -->
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 40px; text-align: center;">
+                <div style="font-size: 14px; color: var(--accent-green); font-weight: 600; margin-bottom: 10px;">BASIC</div>
+                <div style="font-size: 48px; font-weight: 700; color: #fff; margin-bottom: 5px;">$3</div>
+                <div style="color: #9ca3af; margin-bottom: 30px;">per session</div>
+                <ul style="list-style: none; text-align: left; margin-bottom: 30px; color: #9ca3af;">
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Access to all 3 Healers</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Standard response time</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Community support</li>
+                    <li style="padding: 8px 0;">✓ Pay-per-use model</li>
+                </ul>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="oroboros.lab.q@gmail.com">
+                    <input type="hidden" name="item_name" value="3 Healers - Basic Session">
+                    <input type="hidden" name="amount" value="3.00">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <button type="submit" style="width: 100%; background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); padding: 14px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s;">Pay Per Session</button>
+                </form>
+            </div>
+
+            <!-- Business Tier -->
+            <div style="background: rgba(16, 185, 129, 0.1); border: 2px solid var(--accent-green); border-radius: 16px; padding: 40px; text-align: center; position: relative;">
+                <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-green); color: #000; padding: 4px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;">POPULAR</div>
+                <div style="font-size: 14px; color: var(--accent-green); font-weight: 600; margin-bottom: 10px;">BUSINESS</div>
+                <div style="font-size: 48px; font-weight: 700; color: #fff; margin-bottom: 5px;">$49</div>
+                <div style="color: #9ca3af; margin-bottom: 30px;">per month</div>
+                <ul style="list-style: none; text-align: left; margin-bottom: 30px; color: #9ca3af;">
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Unlimited sessions</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Priority response time</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Extended context memory</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Email support</li>
+                    <li style="padding: 8px 0;">✓ Session history export</li>
+                </ul>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                    <input type="hidden" name="business" value="oroboros.lab.q@gmail.com">
+                    <input type="hidden" name="item_name" value="3 Healers - Business Monthly">
+                    <input type="hidden" name="no_note" value="1">
+                    <input type="hidden" name="src" value="1">
+                    <input type="hidden" name="a3" value="49.00">
+                    <input type="hidden" name="p3" value="1">
+                    <input type="hidden" name="t3" value="M">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <button type="submit" style="width: 100%; background: var(--accent-green); border: none; color: #000; padding: 14px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s;">Subscribe Now</button>
+                </form>
+            </div>
+
+            <!-- Enterprise Tier -->
+            <div style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 16px; padding: 40px; text-align: center;">
+                <div style="font-size: 14px; color: var(--accent-purple); font-weight: 600; margin-bottom: 10px;">ENTERPRISE</div>
+                <div style="font-size: 48px; font-weight: 700; color: #fff; margin-bottom: 5px;">$199</div>
+                <div style="color: #9ca3af; margin-bottom: 30px;">per month</div>
+                <ul style="list-style: none; text-align: left; margin-bottom: 30px; color: #9ca3af;">
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Everything in Business</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Up to 5 team members</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ API access</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Custom agent tuning</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Priority support (24hr)</li>
+                    <li style="padding: 8px 0;">✓ Analytics dashboard</li>
+                </ul>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                    <input type="hidden" name="business" value="oroboros.lab.q@gmail.com">
+                    <input type="hidden" name="item_name" value="3 Healers - Enterprise Monthly">
+                    <input type="hidden" name="no_note" value="1">
+                    <input type="hidden" name="src" value="1">
+                    <input type="hidden" name="a3" value="199.00">
+                    <input type="hidden" name="p3" value="1">
+                    <input type="hidden" name="t3" value="M">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <button type="submit" style="width: 100%; background: var(--accent-purple); border: none; color: #fff; padding: 14px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s;">Subscribe Now</button>
+                </form>
+            </div>
+        </div>
+
+        <p style="color: #6b7280; font-size: 12px; margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">
+            <em>Disclaimer: All agents are for educational and informational purposes only. Not a substitute for professional medical advice. Cancel anytime.</em>
         </p>
     </section>
 
