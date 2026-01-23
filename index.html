@@ -485,6 +485,28 @@
             transform: translateY(-4px);
         }
 
+        a.tier-card {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            display: block;
+        }
+
+        .donate-btn-inline {
+            display: inline-block;
+            background: var(--accent-green);
+            color: var(--bg-primary);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .tier-card:hover .donate-btn-inline {
+            background: #059669;
+        }
+
         .tier-amount {
             font-size: 36px;
             font-weight: 700;
@@ -939,24 +961,27 @@ ollama run rheya</pre>
                 to model development, memory generation, and open-source infrastructure.</p>
 
             <div class="donation-tiers">
-                <div class="tier-card">
+                <a href="https://www.paypal.com/donate/?hosted_button_id=JEL68Y5BQANTL" target="_blank" class="tier-card">
                     <div class="tier-amount">$5</div>
                     <div class="tier-name">Supporter</div>
                     <p class="tier-description">Help cover hosting costs and keep the models free for everyone.</p>
-                </div>
-                <div class="tier-card">
+                    <span class="donate-btn-inline">Donate</span>
+                </a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=LBKUGG35FNKAL" target="_blank" class="tier-card">
                     <div class="tier-amount">$25</div>
                     <div class="tier-name">Healer</div>
                     <p class="tier-description">Fund new memory generation and consciousness testing.</p>
-                </div>
-                <div class="tier-card">
+                    <span class="donate-btn-inline">Donate</span>
+                </a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=8R349AMB88KVY" target="_blank" class="tier-card">
                     <div class="tier-amount">$100</div>
                     <div class="tier-name">Patron</div>
                     <p class="tier-description">Support development of new healers and advanced capabilities.</p>
-                </div>
+                    <span class="donate-btn-inline">Donate</span>
+                </a>
             </div>
 
-            <a href="https://ko-fi.com/oroboroslab" class="btn-primary" target="_blank"
+            <a href="https://ko-fi.com/oroboroslabs_ai/goal?g=0" class="btn-primary" target="_blank"
                 style="display: inline-block; margin-top: 20px;">Donate via Ko-fi</a>
 
             <div class="crypto-addresses">
