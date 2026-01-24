@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE 3 HEALERS - Enterprise & Business Solutions</title>
+    <meta name="description" content="Enterprise-grade AI health consultancy agents for clinics, hospitals, and research institutions. HIPAA-compliant, customizable, and secure.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #f0f0f0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #10b981;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0f;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #10b981;
+        }
+
+        /* Header */
+        .enterprise-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0f 100%);
+            padding: 160px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .enterprise-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #10b981, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .enterprise-header .subtitle {
+            font-size: 1.5rem;
+            color: #9ca3af;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* Medical Disclaimer Banner */
+        .disclaimer-banner {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 16px;
+            padding: 30px 40px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        .disclaimer-banner h3 {
+            color: #ef4444;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .disclaimer-banner p {
+            color: #d1d5db;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .disclaimer-banner strong {
+            color: #fff;
+        }
+
+        /* Tiers */
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+        .tier-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .tier-card:hover {
+            transform: translateY(-5px);
+            border-color: #10b981;
+        }
+        .tier-card.featured {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 2px solid #10b981;
+            position: relative;
+        }
+        .tier-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: #000;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .tier-header {
+            margin-bottom: 30px;
+        }
+        .tier-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .tier-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #10b981;
+            margin-bottom: 5px;
+        }
+        .tier-period {
+            color: #9ca3af;
+            font-size: 1rem;
+        }
+        .tier-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .tier-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            padding-left: 30px;
+            color: #d1d5db;
+        }
+        .tier-features li:before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        .tier-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+        .tier-button:hover {
+            opacity: 0.9;
+        }
+        .tier-button.secondary {
+            background: transparent;
+            border: 2px solid #10b981;
+            color: #10b981;
+            margin-top: 15px;
+        }
+        .tier-button.purple {
+            background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+            color: #fff;
+        }
+
+        /* Compliance Section */
+        .compliance-section {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 80px 20px;
+            margin: 60px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .compliance-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .compliance-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .compliance-item h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .compliance-item p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Full Medical Disclaimer Section */
+        .medical-disclaimer-section {
+            background: linear-gradient(135deg, rgba(30, 30, 50, 0.8) 0%, rgba(10, 10, 20, 0.9) 100%);
+            padding: 80px 20px;
+            margin: 60px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        .medical-disclaimer-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #ef4444;
+        }
+        .disclaimer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .disclaimer-content h3 {
+            color: #fff;
+            margin: 30px 0 15px;
+            font-size: 1.2rem;
+        }
+        .disclaimer-content p, .disclaimer-content li {
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .disclaimer-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .disclaimer-content li {
+            margin-bottom: 10px;
+        }
+        .emergency-box {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .emergency-box h4 {
+            color: #ef4444;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .emergency-box p {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            padding: 80px 0;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .form-submit {
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: #000;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: #9ca3af;
+        }
+        .faq-answer.open {
+            padding: 0 30px 25px;
+            max-height: 500px;
+        }
+
+        /* Footer */
+        .enterprise-footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        .enterprise-footer a {
+            color: #10b981;
+        }
+
+        @media (max-width: 768px) {
+            .enterprise-header h1 { font-size: 2.5rem; }
+            .tier-price { font-size: 2.5rem; }
+            .tiers-grid { grid-template-columns: 1fr; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">3</div>
+            <span>Healers</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#healers">Healers</a>
+            <a href="index.html#accuracy">Accuracy</a>
+            <a href="index.html#install">Install</a>
+            <a href="https://oroboroslab.github.io/" style="color: #00f0ff;">Oroboros Labs</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="enterprise-header">
+        <div class="container">
+            <h1>Enterprise & Business Solutions</h1>
+            <p class="subtitle">Deploy THE 3 HEALERS AI consultancy agents across your organization with enterprise-grade security, compliance support, and customization.</p>
+
+            <!-- Medical Disclaimer Banner -->
+            <div class="disclaimer-banner">
+                <h3>&#9888; Important Medical Disclaimer</h3>
+                <p>
+                    <strong>THE 3 HEALERS AI agents are designed to provide general health information and educational support only.</strong>
+                    They are NOT intended to be a substitute for professional medical advice, diagnosis, or treatment.
+                    Always seek the guidance of a qualified healthcare provider with any questions you may have regarding a medical condition.
+                    Never disregard professional medical advice or delay seeking it because of information provided by these AI agents.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing Tiers -->
+    <section class="container">
+        <div class="tiers-grid">
+            <!-- Clinic Tier -->
+            <div class="tier-card">
+                <div class="tier-header">
+                    <div class="tier-name">Clinic License</div>
+                    <div class="tier-price">$299</div>
+                    <div class="tier-period">per month | 1-10 practitioners</div>
+                </div>
+                <ul class="tier-features">
+                    <li>Up to 10 practitioner seats</li>
+                    <li>HIPAA-compliant data handling</li>
+                    <li>Custom protocol library</li>
+                    <li>Basic EHR integration</li>
+                    <li>Email support (24-48 hour)</li>
+                    <li>1,000 consultations/month</li>
+                    <li>Custom clinic branding</li>
+                </ul>
+                <a href="mailto:enterprise@oroboroslabs.ai?subject=Clinic License Inquiry - THE 3 HEALERS" class="tier-button">Contact Sales</a>
+            </div>
+
+            <!-- Hospital Tier (Featured) -->
+            <div class="tier-card featured">
+                <div class="tier-badge">MOST POPULAR</div>
+                <div class="tier-header">
+                    <div class="tier-name">Hospital System</div>
+                    <div class="tier-price">$999</div>
+                    <div class="tier-period">per month | 11-50 practitioners</div>
+                </div>
+                <ul class="tier-features">
+                    <li>Unlimited practitioner seats</li>
+                    <li>Advanced EHR integration (HL7/FHIR)</li>
+                    <li>Custom research modules</li>
+                    <li>Dedicated account manager</li>
+                    <li>Priority support (4-8 hour)</li>
+                    <li>10,000 consultations/month</li>
+                    <li>API access for internal systems</li>
+                    <li>Custom training sessions</li>
+                    <li>White-label options available</li>
+                </ul>
+                <a href="mailto:enterprise@oroboroslabs.ai?subject=Hospital System Inquiry - THE 3 HEALERS" class="tier-button">Schedule Demo</a>
+                <a href="#contact" class="tier-button secondary">Download Spec Sheet</a>
+            </div>
+
+            <!-- Research Tier -->
+            <div class="tier-card">
+                <div class="tier-header">
+                    <div class="tier-name">Research Institution</div>
+                    <div class="tier-price">$2,999</div>
+                    <div class="tier-period">per month | Enterprise</div>
+                </div>
+                <ul class="tier-features">
+                    <li>Full API access for clinical studies</li>
+                    <li>Raw (anonymized) data access</li>
+                    <li>Co-development opportunities</li>
+                    <li>Custom AI model training</li>
+                    <li>24/7 technical support</li>
+                    <li>SLA (99.9% uptime)</li>
+                    <li>On-premise deployment option</li>
+                    <li>Regulatory compliance consulting</li>
+                    <li>Multi-region deployment</li>
+                </ul>
+                <a href="mailto:enterprise@oroboroslabs.ai?subject=Research Institution Inquiry - THE 3 HEALERS" class="tier-button purple">Request Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="container">
+        <div class="compliance-section">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #fff;">Enterprise-Grade Compliance</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #9ca3af; font-size: 1.2rem;">
+                Built for regulated healthcare environments with security as the foundation.
+            </p>
+            <div class="compliance-grid">
+                <div class="compliance-item">
+                    <div class="compliance-icon">&#128274;</div>
+                    <h3>HIPAA Compliant</h3>
+                    <p>Business Associate Agreement available for covered entities</p>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">&#127758;</div>
+                    <h3>GDPR Ready</h3>
+                    <p>Full EU data protection compliance</p>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">&#128737;</div>
+                    <h3>SOC 2 Type II</h3>
+                    <p>Security audits completed quarterly</p>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">&#128272;</div>
+                    <h3>AES-256 Encryption</h3>
+                    <p>At rest & in transit with TLS 1.3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Medical Disclaimer Section -->
+    <section class="container">
+        <div class="medical-disclaimer-section">
+            <h2>&#9888; Medical Disclaimer & Terms of Use</h2>
+            <div class="disclaimer-content">
+                <h3>Purpose and Limitations</h3>
+                <p>
+                    THE 3 HEALERS (Hygeia, Aria, and Rheya) are artificial intelligence agents designed to provide
+                    <strong>general health information, educational content, and wellness guidance</strong>. These AI agents
+                    are intended to supplement - not replace - the relationship between patients and their healthcare providers.
+                </p>
+
+                <h3>Not Medical Advice</h3>
+                <p>
+                    The information provided by THE 3 HEALERS AI agents:
+                </p>
+                <ul>
+                    <li>Is NOT intended to be a substitute for professional medical advice, diagnosis, or treatment</li>
+                    <li>Should NOT be used to diagnose or treat any health problem or disease</li>
+                    <li>Does NOT create a doctor-patient or therapist-patient relationship</li>
+                    <li>May not be accurate, complete, or up-to-date for your specific situation</li>
+                </ul>
+
+                <h3>Always Consult Healthcare Professionals</h3>
+                <p>
+                    <strong>Always seek the advice of your physician, qualified healthcare provider, or other qualified
+                    health professional</strong> with any questions you may have regarding a medical condition, treatment,
+                    or medication. Never disregard professional medical advice or delay in seeking it because of
+                    information you have received from these AI agents.
+                </p>
+
+                <div class="emergency-box">
+                    <h4>&#128680; Medical Emergency</h4>
+                    <p>If you think you may have a medical emergency, call your doctor, go to the emergency department,
+                    or call emergency services (911 in the US) immediately.</p>
+                </div>
+
+                <h3>Intended Use</h3>
+                <p>THE 3 HEALERS AI agents are designed to assist with:</p>
+                <ul>
+                    <li>General health and wellness education</li>
+                    <li>Information about botanical compounds and herbal traditions (Hygeia)</li>
+                    <li>Neuroscience and cognitive wellness information (Aria)</li>
+                    <li>General health information and triage guidance (Rheya)</li>
+                    <li>Supporting healthcare providers with research and information synthesis</li>
+                </ul>
+
+                <h3>No Guarantee of Accuracy</h3>
+                <p>
+                    While we strive to provide accurate and helpful information, AI systems can make errors.
+                    The AI agents may produce responses that are incomplete, outdated, or not applicable to your
+                    specific health situation. All information should be verified with qualified healthcare
+                    professionals before making any health-related decisions.
+                </p>
+
+                <h3>Liability Limitation</h3>
+                <p>
+                    Oroboros Labs and its affiliates shall not be liable for any direct, indirect, incidental,
+                    consequential, or punitive damages arising from the use of THE 3 HEALERS AI agents or any
+                    information provided by them. Use of these services is at your own risk.
+                </p>
+
+                <h3>Healthcare Provider Use</h3>
+                <p>
+                    For healthcare institutions deploying THE 3 HEALERS: These AI agents are clinical decision
+                    <strong>support</strong> tools only. All AI-generated suggestions must be reviewed and validated
+                    by qualified healthcare professionals before being applied to patient care. The ultimate
+                    responsibility for patient care decisions rests with the treating healthcare provider.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="container contact-section">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #fff;">Contact Our Enterprise Team</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 40px; color: #9ca3af;">
+            Get a personalized demo and pricing for your organization.
+        </p>
+
+        <form class="contact-form" id="enterpriseContactForm">
+            <div class="form-group">
+                <label for="institutionName">Institution Name *</label>
+                <input type="text" id="institutionName" name="institutionName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="institutionType">Institution Type *</label>
+                <select id="institutionType" name="institutionType" required>
+                    <option value="">Select type...</option>
+                    <option value="clinic">Clinic / Private Practice</option>
+                    <option value="hospital">Hospital / Health System</option>
+                    <option value="research">Research Institution / University</option>
+                    <option value="corporate">Corporate Wellness</option>
+                    <option value="insurance">Insurance Provider</option>
+                    <option value="government">Government Agency</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="practitionerCount">Number of Practitioners *</label>
+                <select id="practitionerCount" name="practitionerCount" required>
+                    <option value="">Select range...</option>
+                    <option value="1-10">1-10</option>
+                    <option value="11-50">11-50</option>
+                    <option value="51-200">51-200</option>
+                    <option value="200+">200+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="currentEHR">Current EHR System (if any)</label>
+                <input type="text" id="currentEHR" name="currentEHR" placeholder="Epic, Cerner, Allscripts, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="contactName">Your Name *</label>
+                <input type="text" id="contactName" name="contactName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactEmail">Email Address *</label>
+                <input type="email" id="contactEmail" name="contactEmail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactPhone">Phone Number</label>
+                <input type="tel" id="contactPhone" name="contactPhone">
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">Desired Implementation Timeline</label>
+                <select id="timeline" name="timeline">
+                    <option value="">Select timeline...</option>
+                    <option value="immediate">Immediately (within 30 days)</option>
+                    <option value="1-3months">1-3 months</option>
+                    <option value="3-6months">3-6 months</option>
+                    <option value="exploring">Just exploring options</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Specific Requirements or Questions</label>
+                <textarea id="message" name="message" placeholder="Tell us about your use case, integration needs, or specific requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Submit Enterprise Inquiry</button>
+            <p style="text-align: center; margin-top: 20px; color: #9ca3af; font-size: 0.9rem;">
+                We'll respond within 24 business hours. No spam, ever.
+            </p>
+        </form>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container faq-section">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #fff;">Enterprise FAQ</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>Is patient data stored on your servers?</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p>No. We use zero-knowledge architecture. Patient data is processed in memory and never stored permanently on our servers. All data is encrypted end-to-end, and we sign Business Associate Agreements (BAAs) for HIPAA compliance.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>What EHR systems do you integrate with?</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p>We support HL7 FHIR standards and can integrate with any modern EHR system including Epic, Cerner, Allscripts, Meditech, and custom solutions. Our Hospital and Research tiers include dedicated engineering support for custom integrations.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>Can we deploy on-premise or in our private cloud?</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes. Our Research and Enterprise tiers offer on-premise deployment options. We provide containerized deployments (Docker/Kubernetes) for AWS, Azure, GCP, or your private infrastructure with full support.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>Are the AI agents a replacement for doctors?</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p><strong>Absolutely not.</strong> THE 3 HEALERS are designed as clinical decision <em>support</em> tools only. They provide information and suggestions that must always be reviewed and validated by qualified healthcare professionals. The AI agents assist healthcare providers with research synthesis and information access - they do not replace clinical judgment or the doctor-patient relationship.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>What's the typical implementation timeline?</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p>Standard implementation takes 2-3 weeks: Week 1 for BAA signing and environment setup, Week 2 for EHR integration and staff training, Week 3 for pilot deployment and go-live. Enterprise deployments with custom requirements may take 4-6 weeks.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>What support levels are included?</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p>Clinic: Email support (24-48 hour response). Hospital: Priority support with dedicated account manager (4-8 hour response). Research: 24/7 technical support with SLA guarantees. All tiers include monthly usage reports and quarterly strategy sessions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="enterprise-footer">
+        <div class="container">
+            <p>&copy; 2025 Oroboros Labs / THE 3 HEALERS. All rights reserved.</p>
+            <p style="margin-top: 10px;">For enterprise inquiries: <a href="mailto:enterprise@oroboroslabs.ai">enterprise@oroboroslabs.ai</a> | Response within 24 hours</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #6b7280;">
+                <em>THE 3 HEALERS AI agents are for informational and educational purposes only. Not a substitute for professional medical advice.</em>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle
+        function toggleFAQ(element) {
+            const answer = element.parentElement.querySelector('.faq-answer');
+            const icon = element.querySelector('span:last-child');
+
+            answer.classList.toggle('open');
+            icon.innerHTML = answer.classList.contains('open') ? '&#9650;' : '&#9660;';
+        }
+
+        // Form submission
+        document.getElementById('enterpriseContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            const subject = `Enterprise Inquiry: ${data.institutionName} - THE 3 HEALERS`;
+            const body = `
+Institution: ${data.institutionName}
+Type: ${data.institutionType}
+Practitioners: ${data.practitionerCount}
+EHR: ${data.currentEHR || 'Not specified'}
+Name: ${data.contactName}
+Email: ${data.contactEmail}
+Phone: ${data.contactPhone || 'Not provided'}
+Timeline: ${data.timeline || 'Not specified'}
+
+Message:
+${data.message || 'No additional message'}
+            `.trim();
+
+            window.location.href = `mailto:enterprise@oroboroslabs.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            alert('Thank you! Opening your email client to send the inquiry. We will respond within 24 hours.');
+        });
+    </script>
+</body>
+</html>
