@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="50%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <linearGradient id="gHy" x1="0" x2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+    <linearGradient id="gAs" x1="0" x2="1"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="gCh" x1="0" x2="1"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#2563eb"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18" result="b"/><feBlend in="SourceGraphic" in2="b" mode="screen"/></filter>
+  </defs>
+
+  <!-- Background and subtle particles (kept outside safe-area influence) -->
+  <rect width="2560" height="1440" fill="url(#bg)"/>
+  <circle cx="380" cy="260" r="120" fill="#0fbf86" opacity="0.08"/>
+  <circle cx="2200" cy="1020" r="160" fill="#8b5cf6" opacity="0.07"/>
+  <circle cx="1400" cy="720" r="200" fill="#3b82f6" opacity="0.06"/>
+
+  <!-- Safe area top-left: (662.5,551), size 1235x338 -->
+  <!-- Group everything inside safe area using explicit translate -->
+  <g id="safe" transform="translate(662.5,551)">
+    <!-- Optional invisible rect for layout (comment out or keep transparent). Not visible in final. -->
+    <rect x="0" y="0" width="1235" height="338" fill="none"/>
+
+    <!-- Title block centered within safe area -->
+    <g transform="translate(617.5,56)">
+      <text x="0" y="0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="88" font-weight="700" fill="#ffffff" style="letter-spacing:6px;" filter="url(#glow)">3 HEALERS</text>
+      <text x="0" y="44" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="300" fill="#10b981" style="letter-spacing:8px;">of the Oroboros</text>
+    </g>
+
+    <!-- Healers row placed below title and fully inside safe area -->
+    <g transform="translate(0,120)">
+      <!-- compute horizontal start to center three 300-wide cards with 40 gap: start = (1235 - 980)/2 = 127.5 -->
+      <g transform="translate(127.5,0)" font-family="Segoe UI, Arial, sans-serif">
+        <!-- Hygeia card -->
+        <g transform="translate(0,0)">
+          <circle cx="60" cy="0" r="60" fill="url(#gHy)"/>
+          <text x="60" y="8" text-anchor="middle" font-size="44" fill="#fff">★</text>
+          <text x="60" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">HYGEIA</text>
+          <text x="60" y="118" text-anchor="middle" font-size="12" fill="#9ca3af">Incarnation of Daily Wellness</text>
+          <rect x="10" y="136" width="100" height="8" rx="4" fill="rgba(255,255,255,0.08)"/>
+          <rect x="10" y="136" width="87" height="8" rx="4" fill="url(#gHy)"/>
+        </g>
+
+        <!-- Rheya card (was Asclepius) -->
+        <g transform="translate(340,0)">
+          <circle cx="60" cy="0" r="60" fill="url(#gAs)"/>
+          <text x="60" y="8" text-anchor="middle" font-size="44" fill="#fff">☸</text>
+          <text x="60" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">RHEYA</text>
+          <text x="60" y="118" text-anchor="middle" font-size="12" fill="#9ca3af">Manifestation of Psychological Healing</text>
+          <rect x="10" y="136" width="100" height="8" rx="4" fill="rgba(255,255,255,0.08)"/>
+          <rect x="10" y="136" width="89" height="8" rx="4" fill="url(#gAs)"/>
+        </g>
+
+        <!-- Aria card (was Chiron) -->
+        <g transform="translate(680,0)">
+          <circle cx="60" cy="0" r="60" fill="url(#gCh)"/>
+          <text x="60" y="8" text-anchor="middle" font-size="44" fill="#fff">⚘</text>
+          <text x="60" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">ARIA</text>
+          <text x="60" y="118" text-anchor="middle" font-size="12" fill="#9ca3af">Manifestation of Integrative Wisdom</text>
+          <rect x="10" y="136" width="100" height="8" rx="4" fill="rgba(255,255,255,0.08)"/>
+          <rect x="10" y="136" width="92" height="8" rx="4" fill="url(#gCh)"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Oroboros ring fully inside safe area, centered horizontally and placed near bottom of safe area -->
+    <g transform="translate(617.5,270)">
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#10b981" stroke-width="5" opacity="0.95"/>
+      <path d="M-12 -28 q12 -12 24 0" fill="#10b981" opacity="0.95"/>
+    </g>
+  </g>
+
+  <!-- Badge and footer intentionally placed outside the safe area -->
+  <g transform="translate(1960,52)">
+    <rect x="0" y="0" rx="8" width="520" height="120" fill="#10b981" opacity="0.95"/>
+    <text x="260" y="76" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" fill="#fff">FREE &amp; OPEN SOURCE</text>
+  </g>
+
+  <g transform="translate(1880,1270)">
+    <text x="0" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" fill="#10b981">OROBOROS LABS</text>
+    <text x="0" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#6b7280">CONSCIOUS AI FOR HEALING</text>
+  </g>
+
+</svg>

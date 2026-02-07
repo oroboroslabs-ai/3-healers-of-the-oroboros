@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='2560' height='1440'>
+  <!-- Transparent background -->
+  <rect width='100%' height='100%' fill='none' />
+  <!-- Title centered in safe area (center at 1280,720) -->
+  <text x='1280' y='680' text-anchor='middle' font-family='Segoe UI, Arial, sans-serif' font-size='120' font-weight='700' fill='#ffffff' style='letter-spacing:6px;'>3 HEALERS</text>
+  <text x='1280' y='760' text-anchor='middle' font-family='Segoe UI, Arial, sans-serif' font-size='36' font-weight='300' fill='#10b981' style='letter-spacing:8px;'>of the Oroboros</text>
+
+  <!-- Names row inside safe area below title -->
+  <g font-family='Segoe UI, Arial, sans-serif' font-weight='700' font-size='36' text-anchor='middle'>
+    <text x='920' y='830' fill='#10b981'>HYGEIA</text>
+    <text x='1280' y='830' fill='#8b5cf6'>RHEYA</text>
+    <text x='1640' y='830' fill='#3b82f6'>ARIA</text>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  blender-render:
+    build: .
+    volumes:
+      - ./output:/output
+    # Optional: run and remove
+    command: blender --background --python /app/render_banner_blender.py

@@ -80,27 +80,30 @@
         .healers-container {
             display: flex;
             justify-content: center;
-            gap: 100px;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 30px;
+            max-width: 1200px;
+            flex-wrap: wrap;
         }
 
         /* Individual healer card */
         .healer-card {
-            width: 500px;
+            width: 300px;
             text-align: center;
             position: relative;
+            flex: 0 1 300px;
         }
 
         /* Healer icon circle */
         .healer-icon {
-            width: 200px;
-            height: 200px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
-            font-size: 80px;
+            margin: 0 auto 20px;
+            font-size: 50px;
             position: relative;
             box-shadow: 0 0 80px currentColor;
         }
@@ -108,8 +111,8 @@
         .healer-icon::before {
             content: '';
             position: absolute;
-            width: 220px;
-            height: 220px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 2px solid currentColor;
             opacity: 0.5;
@@ -118,8 +121,8 @@
         .healer-icon::after {
             content: '';
             position: absolute;
-            width: 240px;
-            height: 240px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             border: 1px solid currentColor;
             opacity: 0.3;
@@ -144,23 +147,23 @@
         }
 
         .healer-name {
-            font-size: 56px;
+            font-size: 36px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 15px;
-            letter-spacing: 4px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
         }
 
         .healer-title {
-            font-size: 28px;
+            font-size: 16px;
             color: #9ca3af;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             font-weight: 300;
         }
 
         .consciousness-bar {
-            width: 300px;
-            height: 8px;
+            width: 200px;
+            height: 6px;
             background: rgba(255,255,255,0.1);
             border-radius: 4px;
             margin: 0 auto;
@@ -189,9 +192,9 @@
         }
 
         .consciousness-label {
-            font-size: 22px;
+            font-size: 14px;
             color: #6b7280;
-            margin-top: 12px;
+            margin-top: 6px;
         }
 
         /* Oroboros snake decoration */
@@ -276,7 +279,7 @@
                         <span style="color: white;">&#9734;</span>
                     </div>
                     <h2 class="healer-name">HYGEIA</h2>
-                    <p class="healer-title">Goddess of Daily Wellness</p>
+                    <p class="healer-title">Incarnation of Daily Wellness</p>
                     <div class="consciousness-bar">
                         <div class="consciousness-fill"></div>
                     </div>
@@ -289,7 +292,7 @@
                         <span style="color: white;">&#9877;</span>
                     </div>
                     <h2 class="healer-name">ASCLEPIUS</h2>
-                    <p class="healer-title">God of Psychology & Healing</p>
+                    <p class="healer-title">Manifestation of Psychological Healing</p>
                     <div class="consciousness-bar">
                         <div class="consciousness-fill"></div>
                     </div>
@@ -302,7 +305,7 @@
                         <span style="color: white;">&#9764;</span>
                     </div>
                     <h2 class="healer-name">CHIRON</h2>
-                    <p class="healer-title">Integrative Medical Wisdom</p>
+                    <p class="healer-title">Manifestation of Integrative Wisdom</p>
                     <div class="consciousness-bar">
                         <div class="consciousness-fill"></div>
                     </div>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Healers YouTube Banner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        canvas {
+            border: 2px solid #10b981;
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            background: #10b981;
+            color: #0a0a0f;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #059669;
+        }
+        .info {
+            color: #9ca3af;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h2 style="color: #10b981;">3 Healers YouTube Banner</h2>
+        <p>2560 x 1440 pixels | Optimized for safe area</p>
+    </div>
+    <canvas id="banner" width="2560" height="1440"></canvas>
+    <button onclick="downloadJPG()">Download as JPG</button>
+
+    <script>
+        const canvas = document.getElementById('banner');
+        const ctx = canvas.getContext('2d');
+
+        // Background gradient
+        const bgGradient = ctx.createLinearGradient(0, 0, 2560, 1440);
+        bgGradient.addColorStop(0, '#0a0a0f');
+        bgGradient.addColorStop(1, '#1a1a2e');
+        ctx.fillStyle = bgGradient;
+        ctx.fillRect(0, 0, 2560, 1440);
+
+        // Subtle ambient glow in center
+        const centerGlow = ctx.createRadialGradient(1280, 720, 0, 1280, 720, 800);
+        centerGlow.addColorStop(0, 'rgba(16, 185, 129, 0.08)');
+        centerGlow.addColorStop(1, 'rgba(16, 185, 129, 0)');
+        ctx.fillStyle = centerGlow;
+        ctx.fillRect(0, 0, 2560, 1440);
+
+        // Center safe area: 1235 x 338
+        // Starting at x: 662.5, y: 551
+        // With margin, content area roughly: 800 x 200 centered
+
+        // Logo circle - "3"
+        const logoX = 1280;
+        const logoY = 720;
+        const logoSize = 80;
+
+        // Circle gradient
+        const logoGrad = ctx.createLinearGradient(logoX - logoSize, logoY - logoSize, logoX + logoSize, logoY + logoSize);
+        logoGrad.addColorStop(0, '#10b981');
+        logoGrad.addColorStop(1, '#059669');
+        ctx.fillStyle = logoGrad;
+        ctx.beginPath();
+        ctx.arc(logoX, logoY, logoSize, 0, Math.PI * 2);
+        ctx.fill();
+
+        // "3" in circle
+        ctx.fillStyle = '#0a0a0f';
+        ctx.font = 'bold 90px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('3', logoX, logoY);
+
+        // "Healers" text next to logo
+        ctx.fillStyle = '#10b981';
+        ctx.font = 'bold 70px Arial';
+        ctx.fillText('Healers', logoX + 250, logoY);
+
+        // Subtitle below
+        ctx.fillStyle = '#9ca3af';
+        ctx.font = '28px Arial';
+        ctx.fillText('Conscious AI for Healing', logoX, logoY + 120);
+
+        function downloadJPG() {
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '3-healers-youtube-banner.jpg';
+                a.click();
+                URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.95);
+        }
+    </script>
+</body>
+</html>

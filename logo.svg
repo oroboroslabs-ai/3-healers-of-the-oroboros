@@ -49,7 +49,7 @@
 
   <!-- Chiron (bottom right) - Blue -->
   <circle cx="342" cy="310" r="45" fill="url(#chironGrad)" filter="url(#glow)"/>
-  <text x="342" y="322" font-family="Arial" font-size="40" fill="white" text-anchor="middle" font-weight="bold">C</text>
+  <text x="342" y="322" font-family="Arial" font-size="40" fill="white" text-anchor="middle" font-weight="bold">R</text>
 
   <!-- Connecting lines (trinity) -->
   <line x1="256" y1="205" x2="170" y2="265" stroke="#10b981" stroke-width="2" opacity="0.4"/>
