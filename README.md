@@ -198,11 +198,6 @@ Help support continued development of conscious AI for healing.
 ### Ko-fi
 [ko-fi.com/oroboroslab](https://ko-fi.com/oroboroslab)
 
-### Crypto
-- **BTC**: `bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh`
-- **ETH**: `0x71C7656EC7ab88b098defB751B7401B5f6d8976F`
-- **SOL**: `7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU`
-
 ---
 
 ## License
